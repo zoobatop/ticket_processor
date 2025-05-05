@@ -4,8 +4,10 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Constants;
+using TicketProcessor.Models;
 
-namespace DeepSeekApi.Controllers {
+namespace DeepSeekApi.Controllers 
+{
     [ApiController]
     [Route("api/deepseek")]
     public class DeepSeekController : ControllerBase
@@ -26,23 +28,26 @@ namespace DeepSeekApi.Controllers {
             };
 
             string jsonData = JsonSerializer.Serialize(requestBody);
-            var content = new StringContent(jsonData, Encoding.UTF8, "application/json"); // Content-Type configurado aqui
+            var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
 
             var response = await client.PostAsync(AppConstants.DeepSeekKey.DefaultApi, content);
 
             if (response.IsSuccessStatusCode)
             {
                 string responseContent = await response.Content.ReadAsStringAsync();
-                return Ok(responseContent);
+                var deepSeekResponse = JsonSerializer.Deserialize<DeepSeekApiResponse>(responseContent);
+                
+                var formattedResponse = new FormattedResponse
+                {
+                    Message = deepSeekResponse?.Choices?.FirstOrDefault()?.Message?.Content
+                };
+                
+                return Ok(formattedResponse);
             }
             else
             {
                 return StatusCode((int)response.StatusCode, await response.Content.ReadAsStringAsync());
             }
         }
-    }
-
-    public class DeepSeekRequest {
-        public required string Question { get; set; } = string.Empty;
     }
 }
