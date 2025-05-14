@@ -15,7 +15,7 @@ namespace Constants
 
         public static class DeepSeekKey
         {
-            public const string DefaultKey = "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";
+            public const string DefaultKey = "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";
             public const string DefaultApi = "https://openrouter.ai/api/v1/chat/completions";
         }
 
