@@ -1,4 +1,6 @@
-namespace Models
+using TicketProcessor.Models;
+
+namespace TicketProcessor.Models
 {
     public class Chamado
     {
@@ -11,10 +13,10 @@ namespace Models
         public int _PrioridadeId { get; set; }
         
         // Relacionamentos
-        public Usuario Usuario { get; set; }
-        public CategoriaChamado Categoria { get; set; }
-        public Prioridade Prioridade { get; set; }
-        public ICollection<InteracaoChamado> Interacoes { get; set; }
-        public ICollection<Avaliacao> Avaliacoes { get; set; }
+        // public Usuario Usuario { get; set; }
+        // public CategoriaChamado Categoria { get; set; }
+        // public Prioridade Prioridade { get; set; }
+        // public ICollection<InteracaoChamado> Interacoes { get; set; }
+        // public ICollection<Avaliacao> Avaliacoes { get; set; }
     }
 }

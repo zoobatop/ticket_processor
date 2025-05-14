@@ -1,4 +1,6 @@
-namespace Models
+using TicketProcessor.Models;
+
+namespace TicketProcessor.Models
 {
     public class Prioridade
     {
@@ -6,6 +8,6 @@ namespace Models
         public string _Nome { get; set; }
         
         // Relacionamentos
-        public ICollection<Chamado> Chamados { get; set; }
+        // public ICollection<Chamado> Chamados { get; set; }
     }
 }

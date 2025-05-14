@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Npgsql;
-using Data;
+using TicketProcessor.Data;
 
 namespace Configurations
 {

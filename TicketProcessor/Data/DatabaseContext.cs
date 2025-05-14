@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Models;
+using TicketProcessor.Models;
 
-namespace Data
+namespace TicketProcessor.Data
 {
     public class AppDbContext : DbContext
     {
@@ -9,13 +9,12 @@ namespace Data
         {
         }
 
-        public DbSet<TipoUsuario> TiposUsuario { get; set; }
+        // public DbSet<TipoUsuario> TiposUsuario { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<CategoriaChamado> CategoriasChamado { get; set; }
-        public DbSet<Prioridade> Prioridades { get; set; }
-        public DbSet<Chamado> Chamados { get; set; }
-        public DbSet<InteracaoChamado> InteracoesChamado { get; set; }
-        public DbSet<Avaliacao> Avaliacoes { get; set; }
+        // public DbSet<CategoriaChamado> CategoriasChamado { get; set; }
+        // public DbSet<Prioridade> Prioridades { get; set; }
+        // public DbSet<Chamado> Chamados { get; set; }
+        // public DbSet<InteracaoChamado> InteracoesChamado { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

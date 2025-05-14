@@ -1,4 +1,6 @@
-namespace Models
+using TicketProcessor.Models;
+
+namespace TicketProcessor.Models
 {
     public class InteracaoChamado
     {
@@ -9,7 +11,7 @@ namespace Models
         public int _UsuarioId { get; set; }
         
         // Relacionamentos
-        public Chamado Chamado { get; set; }
-        public Usuario Usuario { get; set; }
+        // public Chamado Chamado { get; set; }
+        // public Usuario Usuario { get; set; }
     }
 }

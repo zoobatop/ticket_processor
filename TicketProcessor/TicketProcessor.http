@@ -4,3 +4,19 @@ GET {{TicketProcessor_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+### Criar usu�rio
+POST {{TicketProcessor_HostAddress}}/api/v1/User
+Accept: application/json
+Content-Type: application/json
+
+{
+	"_Nome" : "rafael.geres",
+	"_Email": "rafael.geres@vcrootseven.com.br",
+	"_Senha" : "123asd",
+	"_Cpf": "52268986810",
+	"_Endereco": "Rua Teste",
+	"_Telefone": "16992021661",
+	"_Sexo": "M",
+	"_DataNasc": "2003-08-14"
+}
